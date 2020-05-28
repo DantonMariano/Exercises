@@ -1,0 +1,35 @@
+// Declare an array with 10 integers, read a value for each position and in the end show the average of all the vectors combined and show the greatest and smallest value in the vector.
+
+#include<iostream>
+#include<time.h>
+#include<stdlib.h>
+
+int main(){
+    int array[10];
+
+    srand((unsigned)time(NULL));
+
+    int greatest = 0;
+    int smallest = array[0];
+    int sum = 0;
+
+    for (int i=0; i<10; i++){
+        array[i] = rand()%100+1; // declaring each value as a random value from 1 to 100.
+        sum = array[i] + sum;
+        if (array[i] > greatest){
+            greatest = array[i];
+        }
+        if (array[i] < smallest){
+            smallest = array[i];
+        }
+    }
+
+    int average = sum/10;
+
+    std::cout << "Average = " << average << std::endl;
+    std::cout << "Greatest Value = " << greatest << std::endl;
+    std::cout << "Smallest Value = " << smallest << std::endl;
+
+    return 0;
+}
+
